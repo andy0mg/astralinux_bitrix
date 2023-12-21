@@ -9,18 +9,22 @@ apt-get install curl
 apt-get install git
 ```
 Создаем пользователя ```bitrix:bitrix``` с домашней директорией ```/home/bitrix/```, создаем папку ```/home/bitrix/www/```
+```
+mkdir /home/bitrix
+useradd bitrix
+usermod -aG www-data bitrix
+```
 
 <h2>Установка MariaDB (MySQL)</h2>
 
 Получаем адрес свежего дистрибутива MariaDB. Например, получаем адрес tar.gz отсюда 
-```https://downloads.mariadb.org/interstitial/mariadb-10.3.11/bintar-linux-x86_64/mariadb-10.3.11-linux-x86_64.tar.gz/from/http%3A//mirror.timeweb.ru/mariadb/?serve&change_mirror_from=1```
+```https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.44-linux-glibc2.12-x86_64.tar.gz```
 
-Полный адрес свежих релизов MariaDB тут
-```https://downloads.mariadb.org/interstitial/mariadb-10.3.11/bintar-linux-x86_64/mariadb-10.3.11-linux-x86_64.tar.gz/from/http%3A//mirror.timeweb.ru/mariadb/```
+
 
 Распаковываем 
 
-```tar -zxf mariadb-10.3.11-linux-x86_64.tar.gz```
+```tar -zxf mysql-5.7.44-linux-glibc2.12-x86_64.tar.gz```
 
 Создаем пользователя, прокидываем симлинк
 ```
